@@ -1,0 +1,145 @@
+\documentclass[hidelinks, 4pt]{bookest}
+\usepackage[lf]{venturis} %% lf option gives lining figures as default; 
+			  %% remove option to get oldstyle figures as default
+\renewcommand*\familydefault{\sfdefault}
+
+\let\orignewcommand\newcommand  % store the original \newcommand
+\let\newcommand\providecommand  % make \newcommand behave like \providecommand
+\RequirePackage{verse}
+\let\newcommand\orignewcommand  % use the original `\newcommand` in future
+\makeatletter
+% Use the original definition from verse.sty
+\renewcommand*{\theHpoemline}{\arabic{verse@envctr}.\arabic{poemline}}
+\makeatother
+
+%tamanho do documento
+\geometry{paperwidth=15cm, paperheight=23cm}
+
+%codificação
+\usepackage{siunitx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%lingua
+\usepackage[brazilian]{babel}
+
+%hifen
+\usepackage{hyphenat}
+
+%urls
+\usepackage{hyperref}
+
+%cor,eumerar, tabela, legenda, verso, tamanho de tabela
+\usepackage{color}
+\usepackage[hang]{footmisc}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage[center, small]{titlesec}
+\usepackage{caption}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{array} % for defining a new column type
+\usepackage{doi}
+\usepackage{pdfpages}
+\usepackage{caption}
+\usepackage{mathtools}
+\usepackage{afterpage}
+\usepackage[shortlabels]{enumitem}
+%fontes para imagens e tabelas
+\captionsetup[figure]{font=scriptsize}
+\captionsetup[table]{font=scriptsize}
+\setlength{\captionmargin}{30pt}
+
+
+%cabeçalho
+\usepackage{fancyhdr}
+\fancyhead[LE,RO]{\scriptsize \slshape \rightmark}
+\fancyhead[LO,RE]{}
+\fancyfoot[C]{\thepage}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markright{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}{}}
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%,
+    \newpage}
+
+\begin{document}
+%\includepdf{capa.pdf}
+%\pagebreak
+\begin{titlepage}
+\begin{center}
+\vspace*{\fill}
+{\Huge Debates sobre feminismo e Análise do Comportamento}
+\vspace*{\fill}
+\pagebreak
+\afterpage{\blankpage}
+\end{center}
+\begin{center}
+{\Large Adicionar Organizadores}\\[4cm]
+{\Huge Debates sobre feminismo e Análise do Comportamento}\\[4cm]
+
+{\Large Primeira Edição}\\[3cm]
+
+
+{\large Fortaleza\\
+Imagine Publicações}
+
+2018
+\pagebreak
+\thispagestyle{empty}
+\end{center}
+\pagebreak
+
+Copyright\textsuperscript{\textcircled{c}} 2018 da 1ª edição pela Imagine Publicações Ltda.\\
+
+ISBN: 978-85-54337-00-1
+
+Capa: -
+
+Coordenação: Felipe Leite
+
+Edição: Roberto Leite
+
+Revisão: -
+
+Projeto gráfico e editoração eletrônica: João Pedro Magalhães\\
+\vfill
+\begin{center}
+%\includegraphics[width=0.9\textwidth]{catalografico.png} \\
+\end{center}
+
+2018
+
+Todos os direitos em lingua portuguesa reservados pela
+
+IMAGINE PUBLICAÇÕES LDTA.
+
+Rua Doutor Gilberto Studart, 55 - Sala 1502 - T1
+
+CEP: 60192-105 - Cocó - Fortaleza - CE
+
+Telefone: (85) 3246-1706
+
+Email: imaginepublica@gmail.com\\
+
+Impresso no Brasil pela [...]
+\thispagestyle{empty}
+\end{titlepage}
+\pagenumbering{arabic}
+\input{intro/intro}
+\input{1/capitulo1}
+\input{2/capitulo2}
+\input{3/capitulo3}
+\input{4/capitulo4}
+\input{5/capitulo5}
+\input{6/capitulo6}
+\input{7/capitulo7}
+\input{8/capitulo8}
+\input{9/capitulo9}
+\input{10/capitulo10}
+\end{document}
