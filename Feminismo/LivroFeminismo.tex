@@ -52,6 +52,10 @@
 \captionsetup[table]{font=scriptsize}
 \setlength{\captionmargin}{30pt}
 
+%rodapé vazio
+\makeatletter
+\def\blfootnote{\xdef\@thefnmark{}\@footnotetext}
+\makeatother
 
 %cabeçalho
 \usepackage{fancyhdr}
