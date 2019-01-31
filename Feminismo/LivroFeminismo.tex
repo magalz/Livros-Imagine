@@ -81,6 +81,13 @@
   \fancyfoot[C]{\thepage}
 }
 
+\newcounter{nopage}
+\newenvironment{nopage}
+ {\clearpage\stepcounter{nopage}%
+  \renewcommand{\thepage}{}%
+  \thispagestyle{empty}}
+ {\clearpage\addtocounter{page}{-1}}
+
 \makeatletter
 \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
     \hbox{}\thispagestyle{myplain}\newpage\if@twocolumn\hbox{}\newpage\fi\fi\fi}
@@ -96,6 +103,12 @@
         {\Huge Debates sobre feminismo e Análise do Comportamento}
     \end{center}
     \vspace*{\fill}
+    \pagestyle{empty}
+    \afterpage{\null\newpage}
+    \blankpage
+\begin{center}
+    \vfill
+\end{center}
 \begin{center}
 {\Large Renata Pinheiro e Táhcita Medrado }\\[4cm]
 {\Huge Debates sobre feminismo e Análise do Comportamento}\\[4cm]
@@ -132,7 +145,7 @@ Projeto gráfico e editoração eletrônica: João Pedro Magalhães\\
 
 2019
 
-Todos os direitos em lingua portuguesa reservados pela
+Todos os direitos em língua portuguesa reservados pela
 
 IMAGINE PUBLICAÇÕES LDTA.
 
@@ -147,10 +160,12 @@ Email: editora@imaginetc.com.br\\
 Impresso no Brasil pela Arte Visual Gráfica e Editora, Fortaleza-Ce
 \thispagestyle{empty}
 \end{titlepage}
-\blankpage
-\pagenumbering{arabic}
-\input{intro/intro}
+\begin{nopage}
 \input{prefacio/prefacio.tex}
+\tableofcontents
+\end{nopage}
+\addtocounter{page}{-8}
+\input{intro/intro}
 \input{autoras/autoras}
 \input{1/capitulo1}
 \input{2/capitulo2}
