@@ -47,6 +47,8 @@
 \usepackage{afterpage}
 \usepackage[shortlabels]{enumitem}
 \usepackage{layouts}
+\usepackage{tocloft}
+\renewcommand{\cftdot}{}
 
 %fontes para imagens e tabelas
 \captionsetup[figure]{font=scriptsize}
@@ -135,6 +137,12 @@ Coordenação: Felipe Leite
 
 Edição: Roberto Leite
 
+Editor de Planejamento: Hernando Borges Neves Filho
+
+Comitê Editorial: Hernando Borges Neves Filho, Felipe Leite e
+
+Roberto Leite
+
 Revisão: Letícia Mota
 
 Projeto gráfico e editoração eletrônica: João Pedro Magalhães\\
@@ -162,6 +170,8 @@ Impresso no Brasil pela Arte Visual Gráfica e Editora, Fortaleza-Ce
 \end{titlepage}
 \begin{nopage}
 \input{prefacio/prefacio.tex}
+\addtocontents{toc}{\cftpagenumbersoff{section}}
+\addtocontents{toc}{\cftpagenumbersoff{subsection}}
 \tableofcontents
 \end{nopage}
 \addtocounter{page}{-8}
