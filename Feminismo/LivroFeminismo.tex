@@ -133,7 +133,7 @@ Copyright\textsuperscript{\textcircled{c}} 2019 da 1ª edição pela Imagine Pub
 
 ISBN: 978-85-54337-00-1
 
-Capa: -
+Capa: Ricardo Bezerra
 
 Coordenação: Felipe Leite
 
@@ -171,12 +171,16 @@ Impresso no Brasil pela Arte Visual Gráfica e Editora, Fortaleza-Ce
 \thispagestyle{empty}
 \end{titlepage}
 \begin{nopage}
+    \blankpage
+\end{nopage}
+\addtocounter{page}{-2}
 \input{prefacio/prefacio.tex}
 \addtocontents{toc}{\cftpagenumbersoff{section}}
 \addtocontents{toc}{\cftpagenumbersoff{subsection}}
+\pagestyle{empty}
 \tableofcontents
-\end{nopage}
-\addtocounter{page}{-8}
+\clearpage
+\pagestyle{fancy}
 \input{intro/intro}
 \input{autoras/autoras}
 \input{1/capitulo1}
